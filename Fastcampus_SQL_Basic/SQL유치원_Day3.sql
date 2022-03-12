@@ -29,7 +29,7 @@ select 2130/30
 ;
 
 -- mission3
-select '포켓몬' as '피카츄'  
+select '피카츄' as '포켓몬'
 ;
 
 -- mission4
@@ -47,13 +47,13 @@ select name, height, weight from mypokemon;
 select distinct height from mypokemon;
 
 -- 8
-select attack * 2 as attack2 from mypokemon;
+select name, attack * 2 as attack2 from mypokemon;
 
 -- 9
 select name as '이름' from mypokemon;
 
 -- 10
-select attack '공격력', defense '방어력' from mypokemon;
+select attack 공격력, defense 방어력 from mypokemon;
 
 -- 11
 select ceil(height*100) as 'height(cm)' from mypokemon;
@@ -64,7 +64,7 @@ limit 1
 ;
 
 -- 13 
-select name '영문명', height '키(m)' 
+select name '영문명', height '키(m)', weight '몸무게(kg)'
 from mypokemon
 limit 2
 ;
