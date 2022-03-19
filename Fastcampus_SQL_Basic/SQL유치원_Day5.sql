@@ -48,7 +48,7 @@ from mypokemon
 
 
 /*
-실습
+실습 1
 */
 DROP DATABASE IF EXISTS pokemon;
 CREATE DATABASE pokemon;
@@ -90,4 +90,85 @@ select name, datediff(capture_date, '2022-02-14') as days
 from mypokemon
 ;
 
+/*
+실습 2
+*/
+-- 1
+use pokemon;
+
+select right(name, 3) last_char
+from mypokemon
+;
+
+-- 2
+select left(name, 2) left2
+from mypokemon
+;
+
+-- 3
+select replace(name, 'o', 'O') bigO 
+from mypokemon
+where name like '%o%'
+;
+
 -- 4
+select name, upper(concat(left(type, 1), right(type,1))) as type_code
+from mypokemon
+;
+
+-- 5
+select *
+from mypokemon
+where length(name) > 8
+;
+
+-- 6
+select round(avg(attack), 0) avg_of_attack
+from mypokemon
+;
+
+-- 7
+select floor(avg(defense)) avg_of_defense
+from mypokemon
+;
+
+-- 8
+select name, power(attack, 2) as attack2
+from mypokemon
+where length(name) < 8
+;
+
+-- 9
+select name, (attack % 2) as div2
+from mypokemon
+;
+select name, mod(attack, 2) as div2
+from mypokemon
+;
+
+-- 10
+select name, abs(attack - defense) as diff
+from mypokemon
+where attack <= 50
+;
+
+-- 11
+select date(now()) now_date, time(now()) now_time
+;
+select current_date() now_date, current_time() now_time
+;
+
+-- 12
+select name, month(capture_date) month_num, monthname(capture_date) month_eng
+from mypokemon
+;
+
+-- 13
+select dayofweek(capture_date) day_num, dayname(capture_date) day_eng
+from mypokemon
+;
+
+-- 14
+select year(capture_date) year, month(capture_date) month, day(capture_date) day
+from mypokemon
+;
